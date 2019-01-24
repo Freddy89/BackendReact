@@ -16,11 +16,14 @@ using Microsoft.Owin.Security.OAuth;
 using Backend.Models;
 using Backend.Providers;
 using Backend.Results;
+using System.Web.Http.Cors;
+using System.Net;
 
 namespace Backend.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+    [EnableCors(origins: "http://localhost:3000", headers: "*", methods: "*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";
@@ -36,6 +39,8 @@ namespace Backend.Controllers
             UserManager = userManager;
             AccessTokenFormat = accessTokenFormat;
         }
+
+        
 
         public ApplicationUserManager UserManager
         {
@@ -65,7 +70,12 @@ namespace Backend.Controllers
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
         }
-
+        [Route("BadDima")]
+        [AllowAnonymous]
+        public IHttpActionResult MyMethod()
+        {
+            return Content(HttpStatusCode.OK, new { hello = "semen" });
+        }
         // POST api/Account/Logout
         [Route("Logout")]
         public IHttpActionResult Logout()

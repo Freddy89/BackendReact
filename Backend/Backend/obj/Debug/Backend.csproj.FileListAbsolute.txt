@@ -128,3 +128,6 @@ C:\React\Backend\Backend\obj\Debug\Backend.dll
 C:\React\Backend\Backend\obj\Debug\Backend.pdb
 C:\React\Backend\Backend\obj\Debug\Backend.Migrations.Beginaspnetidentity.resources
 C:\React\Backend\Backend\obj\Debug\Backend.csproj.GenerateResource.cache
+C:\React\Backend\Backend\bin\System.Web.Cors.dll
+C:\React\Backend\Backend\bin\System.Web.Http.Cors.dll
+C:\React\Backend\Backend\bin\System.Web.Http.Cors.xml
